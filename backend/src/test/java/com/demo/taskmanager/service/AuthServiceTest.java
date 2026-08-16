@@ -68,5 +68,15 @@ class AuthServiceTest {
                 .hasMessageContaining("Invalid credentials");
     }
 
+    @Test
+    void generatePasswordResetToken_shouldReturnRandomUrlSafeToken() {
+        String firstToken = authService.generatePasswordResetToken("alice@test.com");
+        String secondToken = authService.generatePasswordResetToken("alice@test.com");
+
+        assertThat(firstToken).isNotBlank();
+        assertThat(firstToken).matches("[A-Za-z0-9_-]+");
+        assertThat(secondToken).isNotEqualTo(firstToken);
+    }
+
     // SONAR-DEMO: register e validateToken sem cobertura — intencional para demonstração
 }

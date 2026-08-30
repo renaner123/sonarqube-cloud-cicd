@@ -17,6 +17,8 @@ import com.demo.taskmanager.dto.TaskResponse;
 import com.demo.taskmanager.dto.UserResponse;
 import com.demo.taskmanager.exception.BusinessException;
 import com.demo.taskmanager.exception.ResourceNotFoundException;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -30,6 +32,9 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class TaskService {
+
+    @PersistenceContext
+    private EntityManager entityManager;
 
     private final TaskRepository taskRepository;
     private final UserRepository userRepository;

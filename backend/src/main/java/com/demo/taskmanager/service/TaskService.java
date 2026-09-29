@@ -100,7 +100,6 @@ public class TaskService {
         if (request.getTitle() == null || request.getTitle().isBlank()) {
             throw new BusinessException("Task title is required");
         }
-
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User", userId));
                 

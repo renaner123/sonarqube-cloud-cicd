@@ -28,8 +28,6 @@ O job configura Node.js 20, instala dependências com `npm ci`, executa `npm run
 4. Execute o workflow pelo menos uma vez para que os checks apareçam nas configurações do repositório.
 5. Em **Settings → Rules → Rulesets**, crie ou atualize um ruleset ativo para `main`, exija pull requests e selecione como obrigatórios os checks do workflow que devem passar antes do merge.
 
-> **Plano Free:** a análise gratuita é para repositórios públicos; repositórios privados exigem um plano pago. Confirme os planos e limites atuais do SonarQube Cloud antes de escolher a visibilidade do repositório.
-
 > Para bloquear merges por reprovação do Quality Gate, o job que realiza cada análise precisa reportar a falha como check obrigatório. No workflow atual, isso está configurado para o backend, mas não para o frontend. Além disso, verifique as limitações vigentes do SonarQube Cloud para bloqueio de PRs em projetos de monorepo antes de depender desse fluxo em outro repositório.
 
 ## Executar a aplicação localmente (opcional)

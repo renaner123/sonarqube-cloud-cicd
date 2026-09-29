@@ -5,8 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class QualityGateDemoService {
 
-    public String normalizeTitle() {
-        String title = null;
-        return title.trim();
+    public String normalizeTitle(String title) {
+        return title == null ? "" : title.trim();
     }
 }
